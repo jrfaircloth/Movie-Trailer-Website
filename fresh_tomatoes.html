@@ -51,11 +51,16 @@
     </style>
     <script type="text/javascript" charset="utf-8">
         // Pause the video when the modal is closed
-        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
+        $(document).on('click', '.hanging-close, #trailer, .modal-backdrop, .modal', function (event) {
             // Remove the src so the player itself gets removed, as this is the only
             // reliable way to ensure the video stops playing in IE
-            //$("#trailer-video-container").empty();
-                $("#trailer-video-container iframe").attr("src", $("#trailer-video-container iframe").attr("src"));
+
+            //Doesn't clear content when you click in the movie content area
+            if(!$(event.target).is('.noClick')) {
+                $("#trailer-video-container").empty();
+              }
+   
+
 
         });
         // Start playing the video whenever the trailer modal is opened
@@ -97,11 +102,11 @@
             <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
           </a>
           <div class="scale-media" id="trailer-video-container"></div>
-          <div style="padding:10px;">
-          <div><h4>Starring: &nbsp;</h4><p id="movie-stars" style="padding:10px;"></p></div>
-          <div><h4>Synopsis:</h4><p id="video-description" style="padding:10px;"></p></div>
-          <div><h4>Rating:&nbsp;</h4><div id="movie-rating" style="padding:10px;"></div></div>
-          <div><h4>Release Date:&nbsp;</h4><div id="movie-date" style="padding:10px;"></div></div>
+          <div class="noClick" style="padding:10px;">
+          <div class="noClick" ><h4  class="noClick" >Starring: &nbsp;</h4><p class="noClick" id="movie-stars" style="padding:10px;"></p></div>
+          <div class="noClick" ><h4 class="noClick" >Synopsis:</h4><p class="noClick" id="video-description" style="padding:10px;"></p></div>
+          <div class="noClick" ><h4 class="noClick" >Rating:&nbsp;</h4><div  class="noClick" id="movie-rating" style="padding:10px;"></div></div>
+          <div>< class="noClick" h4>Release Date:&nbsp;</h4><div  class="noClick" id="movie-date" style="padding:10px;"></div></div>
           </div>
         </div>
       </div>

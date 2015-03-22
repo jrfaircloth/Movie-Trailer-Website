@@ -1,6 +1,8 @@
 import media
 import fresh_tomatoes
 
+
+#Instantiation of movies for trailer website 
 war_games = media.Movie("WarGames",
                         "David is a high school student with a talent for computers and gaming. His harmless intentions of hacking into the computer system to play a new unreleased video game result in a threat of a real nuclear war, after he un-intentionally connnects to a military supercomputer. An American thriller about the fear of a nuclear war from the early 1980's.",
                         "http://upload.wikimedia.org/wikipedia/en/2/29/Wargames.jpg",
@@ -50,6 +52,7 @@ robin_hood = media.Movie("Robin Hood: Men in Tights",
                          "28 July 1993")
 
 
+#Creates movies list to sent to fresh_tomatoes
 movies = [war_games, pitch_perfect, gone_girl, star_wars, imitation_game, robin_hood]
 fresh_tomatoes.open_movies_page(movies)
 
